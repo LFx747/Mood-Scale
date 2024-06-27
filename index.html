@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection of Emotions</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .happy-section {
+            background-image: url('cloudBD.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .angry-section {
+            background-image: url('firee.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+        }
+
+        .range {
+            font-family: "Rubik Bubbles", system-ui;
+            margin: 20px;
+            font-size: 25pt;
+            color: black;
+           
+
+        }
+
+        input[type="range"] {
+            width: 300px;
+            margin-top: 20px;
+            
+        }
+    </style>
+
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <!-- Happy Section -->
+    <div class="section happy-section">
+        <div class="range">How "satisfied" are you ?</div>
+        <div id="happy-image-container">
+            <img id="happy-emotion-image" src="1happy1.png" alt="Happy Emotion Image">
+        </div>
+        <div id="happy-slider-container">
+            <input type="range" id="happy-emotion-slider" min="1" max="6" value="1" step="1">
+        </div>
+    </div>
+
+    <!-- Angry Section -->
+    <div class="section angry-section">
+        <div class="range">How "upset" are you ?</div>
+        <div id="angry-image-container">
+            <img id="angry-emotion-image" src="1Angry1.png" alt="Angry Emotion Image">
+        </div>
+        <div id="angry-slider-container">
+            <input type="range" id="angry-emotion-slider" min="1" max="5" value="1" step="1">
+        </div>
+    </div>
+
+    <script>
+        const happyImage = document.getElementById('happy-emotion-image');
+        const happySlider = document.getElementById('happy-emotion-slider');
+        happySlider.addEventListener('input', function() {
+            const value = happySlider.value;
+            happyImage.src = value + 'happy' + value + '.png';
+        });
+
+        const angryImage = document.getElementById('angry-emotion-image');
+        const angrySlider = document.getElementById('angry-emotion-slider');
+        angrySlider.addEventListener('input', function() {
+            const value = angrySlider.value;
+            angryImage.src = value + 'Angry' + value + '.png';
+        });
+    </script>
+</body>
+</html>
